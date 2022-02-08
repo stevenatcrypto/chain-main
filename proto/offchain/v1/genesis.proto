@@ -1,0 +1,16 @@
+// Copyright (c) 2016-2021 Shanghai Bianjie AI Technology Inc. (licensed under the Apache License, Version 2.0)
+// Modifications Copyright (c) 2021, CRO Protocol Labs ("Crypto.org") (licensed under the Apache License, Version 2.0)
+syntax = "proto3";
+package chainmain.offchain.v1;
+
+import "gogoproto/gogo.proto";
+import "offchain/v1/offchain.proto";
+
+option go_package = "github.com/crypto-org-chain/chain-main/x/offchain/types";
+
+// GenesisState defines the capability module's genesis state.
+// TODO: currently left empty (for versioning),
+// later, it may include fields needed for custom capabilities
+// (subscriptions, vaultable accounts, ...)
+message GenesisState {
+}

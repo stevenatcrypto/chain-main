@@ -1,0 +1,23 @@
+// Copyright (c) 2016-2021 Shanghai Bianjie AI Technology Inc. (licensed under the Apache License, Version 2.0)
+// Modifications Copyright (c) 2021, CRO Protocol Labs ("Crypto.org") (licensed under the Apache License, Version 2.0)
+syntax = "proto3";
+package chainmain.offchain.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/crypto-org-chain/chain-main/x/offchain/types";
+option (gogoproto.goproto_getters_all) = false;
+
+// MsgSignData defines an arbitrary, general-purpose, off-chain message
+message MsgSignData {
+    // signer is the bech32 representation of the signer's account address
+    string signer = 1;
+    // data represents the raw bytes of the content that is signed (text, json, etc)
+    bytes data = 2;
+}
+
+// ListOfMsgSignData defines a list of MsgSignData, used to marshal and unmarshal them in a clean way
+message ListOfMsgSignData {
+    // msgs is a list of messages
+    repeated MsgSignData msgs = 1;
+}
